@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem de legumes</title>
+    <style>
+        #contador { margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <h1>CONTADOR DE LETRAS</h1>
+    <input type="text" id="texto" oninput="contarletras()">
+    <span id="contador">0 letras</span>
+
+    <script>
+        function contarCaracteres() {
+            const texto = document.getElementById('texto').value;
+            const contador = document.getElementById('contador');
+            let totalCaracteres = 0;
+
+            console.log('Texto atual:', texto); // Logando o valor atual do texto
+
+            for(let i = 0; i < texto.length; i++) {
+                totalCaracteres++;
+                console.log('Contando letras:', totalCaracteres); // Logando a contagem de caracteres a cada iteração
+            }
+
+            console.log('Total de letras:', totalCaracteres); // Logando o total de caracteres contados
+
+            contador.textContent = totalletras + ' letras';
+            console.log('Texto do contador atualizado:', contador.textContent); // Logando o valor final do contador
+        }
+    </script>
+</body>
+</html>

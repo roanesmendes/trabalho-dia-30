@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Dinâmica</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        ul { padding-left: 20px; }
+        li { margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>lISTA DE LEGUMES:</h1>
+    <input type="text" id="item" placeholder="Digite sua lista">
+    <button onclick="adicionarItem()">COMPRAR</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+        const lista = [];
+
+        function adicionarItem() {
+            const itemInput = document.getElementById('item');
+            const item = itemInput.value;
+
+            console.log('Item adicionado:', item); // Logando o valor do item adicionado
+
+            if(item) {
+                lista.push(item);
+                console.log('Lista após adição:', lista); // Logando o estado da lista após adicionar o item
+                itemInput.value = '';
+                exibirLista();
+            }
+        }
+
+        function exibirLista() {
+            const listaUl = document.getElementById('lista');
+            listaUl.innerHTML = '';
+
+            console.log('Iniciando a exibição da lista'); // Indicando o início da exibição da lista
+
+            for(let i = 0; i < lista.length; i++) {
+                console.log('Exibindo item:', lista[i]); // Logando cada item enquanto ele é exibido
+                const li = document.createElement('li');
+                li.textContent = lista[i];
+                listaUl.appendChild(li);
+            }
+
+            console.log('Lista exibida no DOM:', listaUl.innerHTML); // Logando o HTML da lista após a exibição
+        }
+    </script>
+</body>
+</html>
